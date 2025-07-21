@@ -1,0 +1,28 @@
+<div id="content2" class="drone-container" [class.content2-visible]="isContent2Visible">
+  <!-- Control Buttons (bottom right) -->
+  <div class="control-buttons">
+    <button (click)="toggleFlying()">
+      {{ isFlying ? 'Stop Drone' : 'Start Drone' }}
+    </button>
+    <button (click)="toggleSpray()" [disabled]="!isFlying">
+      {{ isSpraying ? 'Stop Spray' : 'Start Spray' }}
+    </button>
+  </div>
+
+  <!-- Drone -->
+  <div class="drone" [style.left.px]="droneX" [style.top.px]="droneY">
+    <img src="https://media.tenor.com/piEpux8KxmwAAAAi/drone-flying.gif" alt="Drone" class="drone-image" />
+
+    <!-- Spray Effect -->
+    <div class="spray-effect">
+      <div *ngFor="let particle of sprayParticles"
+           class="spray-particle"
+           [style.left.px]="particle.x"
+           [style.top.px]="particle.y"
+           [style.width.px]="particle.size"
+           [style.height.px]="particle.size"
+           [style.opacity]="particle.opacity">
+      </div>
+    </div>
+  </div>
+</div>

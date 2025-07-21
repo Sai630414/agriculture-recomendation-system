@@ -1,51 +1,90 @@
 .animation-container {
   position: relative;
   height: 100vh;
+  background: #f0fff0;
   overflow: hidden;
-  background: #e6ffe6; /* Optional background */
+  padding: 20px;
 }
 
-/* Birds GIF animation from top-right */
+/* Birds */
 .birds-gif {
   position: absolute;
-  top: -100px;
-  right: -200px;
   width: 150px;
-  animation: flyIn 5s ease-out forwards;
+  top: -100px;
+  z-index: 10;
 }
-
-@keyframes flyIn {
+.birds-right {
+  right: -1200px;
+  animation: flyInRight 5s ease-out forwards;
+}
+.birds-left {
+  left: -200px;
+  transform: scale(1.5);
+  margin-left: 300px;
+  animation: flyInLeft 5s ease-out forwards;
+}
+@keyframes flyInRight {
   to {
-    top: 30px;
     right: 30px;
+    top: 30px;
+  }
+}
+@keyframes flyInLeft {
+  to {
+    left: 30px;
+    top: 60px;
   }
 }
 
-/* Tractor and paragraph section */
+/* Tractor + Text block */
 .tractor-section {
-  display: flex;
-  align-items: center;
   position: absolute;
   bottom: 100px;
-  left: -300px;
-  animation: moveTractor 6s ease-out forwards;
+  left: -100%; /* Start off-screen */
+  animation: slideInFromLeft 5s ease-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(100% - 270px); /* Leaves space for sidebar (250px + padding) */
+  margin-left: 270px; /* Push block to right of sidebar */
+  z-index: 2;
+  padding-bottom: 0%;
 }
 
-.tractor-gif {
-  width: 120px;
-  margin-right: 20px;
+@keyframes slideInFromLeft {
+  to {
+    left: 0;
+  }
 }
 
 .recommendation-text {
-  max-width: 500px;
+  display: flex;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  border-radius: 10px;
+  max-width: 100%;
+  padding-bottom: 0%;
 }
 
-@keyframes moveTractor {
-  to {
-    left: 50px;
-  }
+.tractor-gif {
+  width: 200px;
+  margin-left: 20px;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+}
+
+.text-content h2 {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 24px;
+}
+
+.text-content p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
 }
