@@ -1,0 +1,16 @@
+.main-container {
+  display: flex;
+  height: 60vh; /* Full viewport height if needed */
+}
+
+app-sidebar {
+    margin-top: 6% ;
+  width: 250px; /* Sidebar width */
+  background-color: hsl(0, 0%, 100%); /* Optional */
+}
+
+router-outlet[name="loginOutlet"] {
+  flex: 1; /* Take remaining space */
+  padding: 0%;
+  
+}

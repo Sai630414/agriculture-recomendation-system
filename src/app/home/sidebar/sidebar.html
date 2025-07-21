@@ -1,8 +1,8 @@
 <div class="navbar-container">
   <!-- Logo -->
   <div class="logo-section">
-    <img src="assets/logo.png" alt="Logo" class="logo-img" />
-    <h1><span style="color:#6e8efb;">Agro</span><span style="color:#a777e3;">Pilot</span></h1>
+    <img src="https://github.com/Sai630414/agriculture-recomendation-system/blob/master/src/assets/logo.png?raw=true" alt="Logo" class="logo-img" />
+    <h1><span style="color:#7ca636;">Agro</span><span style="color:#6999a7;">Pilot</span></h1>
   </div>
 
   <!-- Navigation -->
@@ -16,37 +16,40 @@
     <!-- Products Dropdown -->
     <div class="dropdown">
       <div class="nav-item" (click)="toggleDropdown(1)">
-        <img src="https://img.icons8.com/ios-filled/50/000000/box.png" width="18" />
+       <img src="https://img.icons8.com/ios-filled/50/000000/services.png" width="18" />
+
         <span class="text">Products</span>
         <span class="arrow">{{ isDropdown1Open ? '▲' : '▼' }}</span>
       </div>
       <div class="dropdown-content" *ngIf="isDropdown1Open">
-        <a (click)="onDropdownClick('Product A')">Product A</a>
-        <a (click)="onDropdownClick('Product B')">Product B</a>
-        <a (click)="onDropdownClick('Product C')">Product C</a>
+        <a (click)="onDropdownClick('Product A')">Crop Recomendation</a>
+        <a (click)="onDropdownClick('Product B')">Plant Recomendation</a>
+        <a (click)="onDropdownClick('Product C')">Manure Recomendation</a>
       </div>
     </div>
 
     <!-- Resources Dropdown -->
     <div class="dropdown">
       <div class="nav-item" (click)="toggleDropdown(2)">
-        <img src="https://img.icons8.com/ios-filled/50/000000/open-book.png" width="18" />
-        <span class="text">Resources</span>
+       <img src="https://img.icons8.com/ios-filled/50/000000/language.png" width="18" />
+        <span class="text">Languages</span>
         <span class="arrow">{{ isDropdown2Open ? '▲' : '▼' }}</span>
       </div>
       <div class="dropdown-content" *ngIf="isDropdown2Open">
-        <a (click)="onDropdownClick('Docs')">Docs</a>
-        <a (click)="onDropdownClick('Guides')">Guides</a>
-        <a (click)="onDropdownClick('Tutorials')">Tutorials</a>
+        <a (click)="onDropdownClick('Docs')">English-US</a>
+        <a (click)="onDropdownClick('Guides')">తెలుగు</a>
+        <a (click)="onDropdownClick('Tutorials')">हिन्दी</a>
       </div>
     </div>
   </nav>
 
   <!-- Login -->
-  <div class="login-section">
-    <button class="login-btn">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" width="16" />
-      <span>Login</span>
-    </button>
+  <div >
+ <button class="login-btn"
+  [routerLink]="[{ outlets: { loginOutlet: ['login'] } }]"    (click)="openLogin()">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" width="16" />
+  <span>Login</span>
+</button>
+
   </div>
 </div>

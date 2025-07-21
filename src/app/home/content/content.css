@@ -1,0 +1,51 @@
+.animation-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #e6ffe6; /* Optional background */
+}
+
+/* Birds GIF animation from top-right */
+.birds-gif {
+  position: absolute;
+  top: -100px;
+  right: -200px;
+  width: 150px;
+  animation: flyIn 5s ease-out forwards;
+}
+
+@keyframes flyIn {
+  to {
+    top: 30px;
+    right: 30px;
+  }
+}
+
+/* Tractor and paragraph section */
+.tractor-section {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 100px;
+  left: -300px;
+  animation: moveTractor 6s ease-out forwards;
+}
+
+.tractor-gif {
+  width: 120px;
+  margin-right: 20px;
+}
+
+.recommendation-text {
+  max-width: 500px;
+  font-family: Arial, sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+@keyframes moveTractor {
+  to {
+    left: 50px;
+  }
+}
