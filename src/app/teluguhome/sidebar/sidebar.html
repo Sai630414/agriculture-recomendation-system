@@ -10,7 +10,7 @@
     <!-- Home -->
     <div class="nav-item" [class.active]="activeNavItem === 'home'" (click)="setActive('home')">
       <img src="https://img.icons8.com/ios-filled/50/000000/home.png" width="18" />
-      <span class="text">Home</span>
+      <span class="text">హోమ్</span>
     </div>
 
     <!-- Products Dropdown -->
@@ -18,13 +18,13 @@
       <div class="nav-item" (click)="toggleDropdown(1)">
        <img src="https://img.icons8.com/ios-filled/50/000000/services.png" width="18" />
 
-        <span class="text">Products</span>
+        <span class="text">సర్వీసెస్</span>
         <span class="arrow">{{ isDropdown1Open ? '▲' : '▼' }}</span>
       </div>
       <div class="dropdown-content" *ngIf="isDropdown1Open">
-        <a (click)="onDropdownClick('Product A')">Crop Recomendation</a>
-        <a (click)="onDropdownClick('Product B')">Plant Recomendation</a>
-        <a (click)="onDropdownClick('Product C')">Manure Recomendation</a>
+        <a (click)="onDropdownClick('Product A')">పంట సిఫార్సు</a>
+        <a (click)="onDropdownClick('Product B')">మొక్కల సిఫార్సు</a>
+        <a (click)="onDropdownClick('Product C')">ఎరువు సిఫార్సులు</a>
       </div>
     </div>
 
@@ -32,13 +32,12 @@
     <div class="dropdown">
       <div class="nav-item" (click)="toggleDropdown(2)">
        <img src="https://img.icons8.com/ios-filled/50/000000/language.png" width="18" />
-        <span class="text">Languages</span>
+        <span class="text">భాషలు</span>
         <span class="arrow">{{ isDropdown2Open ? '▲' : '▼' }}</span>
       </div>
       <div class="dropdown-content" *ngIf="isDropdown2Open">
         <a (click)="onDropdownClick('Docs')">English-US</a>
-        <a routerLink="/teluguhome" routerLinkActive="active">తెలుగు</a>
-
+        <a (click)="onDropdownClick('Guides')">తెలుగు</a>
         <a (click)="onDropdownClick('Tutorials')">हिन्दी</a>
       </div>
     </div>
@@ -47,10 +46,11 @@
   <!-- Login -->
   <div >
  <button class="login-btn"
-  [routerLink]="[{ outlets: { loginOutlet: ['login'] } }]"    (click)="openLogin()">
+  [routerLink]="[{ outlets: { teluguloginOutlet: ['logintelugu'] } }]"    (click)="openLogin()">
   <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" width="16" />
-  <span>Login</span>
+  <span>లాగిన్</span>
 </button>
+
 
   </div>
 </div>

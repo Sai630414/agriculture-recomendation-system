@@ -1,0 +1,36 @@
+.main-container {
+  position: relative;
+  
+}
+
+/* Fixed sidebar on left */
+app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 6%;
+  width: 250px;
+  height: 40%;
+  
+  z-index: 5;
+}
+
+/* Content area to the right of sidebar */
+app-content {
+  margin-left: 500px; /* Push right of sidebar */
+  flex: 1;
+margin-top: 0%;
+  position: relative;
+  z-index: 0; /* Behind everything */
+}
+
+/* Router outlet floats above content */
+router-outlet[name="loginOutlet"] {
+  position: absolute;
+  top: 50px;
+  left: 250px; /* same as sidebar width */
+  width: calc(100% - 250px);
+  z-index: 5;
+  pointer-events: auto;
+}
+

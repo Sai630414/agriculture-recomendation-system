@@ -2,6 +2,8 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Login } from './home/login/login';
+import { Teluguhome } from './teluguhome/teluguhome';
+import { Logint } from './teluguhome/logint/logint';
 
 export const routes: Routes = [  {
     path: 'home',
@@ -14,5 +16,6 @@ export const routes: Routes = [  {
       }
     ]
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path:'teluguhome', component:Teluguhome,children:[{ path:'logintelugu',component:Logint,outlet:'teluguloginOutlet'}]}
 ];
