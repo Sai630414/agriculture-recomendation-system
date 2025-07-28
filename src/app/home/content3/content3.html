@@ -1,0 +1,12 @@
+<div class="slider-container">
+  <div class="crop-card" *ngFor="let crop of crops; let i = index"
+       (mouseenter)="onHover(i)"
+       (mouseleave)="onLeave()">
+    <img [src]="crop.image" [alt]="crop.name" class="crop-image">
+    
+    <div class="popover" *ngIf="hoveredCropIndex === i">
+      <h4>{{ crop.name }}</h4>
+      <p>{{ crop.info }}</p>
+    </div>
+  </div>
+</div>

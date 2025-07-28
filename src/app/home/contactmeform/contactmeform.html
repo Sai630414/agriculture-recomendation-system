@@ -1,0 +1,46 @@
+<div class="contact-container">
+  <h2>Contact Me</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <input
+        type="text"
+        [(ngModel)]="formData.name"
+        name="name"
+        required
+        placeholder="e.g. Ramesh Kumar"
+      />
+    </label>
+
+    <label>
+      Email:
+      <input
+        type="email"
+        [(ngModel)]="formData.email"
+        name="email"
+        required
+        placeholder="e.g. ramesh@example.com"
+      />
+    </label>
+
+    <label>
+      Message:
+      <textarea
+        [(ngModel)]="formData.message"
+        name="message"
+        required
+        placeholder="Write your farming query or suggestion..."
+      ></textarea>
+    </label>
+
+    <button
+      type="submit"
+      (mouseover)="moveButton($event)"
+      (mouseleave)="resetButtonPosition($event)"
+      [disabled]="!isFormValid()"
+    >
+      Submit
+    </button>
+  </form>
+</div>

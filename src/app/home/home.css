@@ -33,4 +33,6 @@ router-outlet[name="loginOutlet"] {
   z-index: 5;
   pointer-events: auto;
 }
-
+app-content3 {
+  margin-top: 30px;
+}
