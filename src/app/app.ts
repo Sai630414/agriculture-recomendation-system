@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { inject } from '@vercel/analytics';
 import { routes } from './app.routes';
 @Component({
   selector: 'app-root',
@@ -12,6 +13,9 @@ import { routes } from './app.routes';
 export class App {
   protected title = 'farmer';
   ngOnInit(): void {
+    // Initialize Vercel Web Analytics
+    inject();
+
     const script = document.createElement('script');
     script.src = 'https://cdn.jotfor.ms/agent/embedjs/019830c0d33c7c0c9c7130e441b9886f1bef/embed.js?skipWelcome=1&maximizable=1';
     script.async = true;
